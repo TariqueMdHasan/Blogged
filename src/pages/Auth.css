@@ -1,0 +1,87 @@
+.auth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100vw;
+    margin-top: 7vh;
+}
+.auth-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vh;
+    width: 15rem;
+    height: 2.5rem;
+    background-color: var(--nav-bg);
+    border-radius: 2.2rem;
+    position: relative;
+    overflow: hidden;
+}
+.auth-slider{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+    border-radius: 2.01rem;
+    transition: transform 0.5s ease-in-out;
+}
+.auth-slider.left{
+    transform: translateX(-50%);
+}
+.auth-slider.right{
+    transform: translateX(50%);
+}
+.auth-login, .auth-register{
+    width: 50%;
+    height: 100%;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease-in-out;
+}
+.auth-login.active, .auth-register.active{
+    color: white;
+}
+
+/* auth form sliding effect from here..... position ka dhyan rakho */
+
+.auth-form {
+    display: flex;
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--nav-bg);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* justify-content: center; */
+    /* align-items: self-start; */
+}
+
+.auth-form div{
+    min-width: 85%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.show-login div:first-child{
+    transform: translateX(-100%);
+}
+
+.show-login div:last-child{
+    transform: translateX(-100%);
+}
+
+.show-register div:first-child{
+    transform: translateX(0%);
+}
+
+.show-register div:last-child{
+    transform: translateX(0%);
+}

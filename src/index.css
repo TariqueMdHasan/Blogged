@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* light theme */
+body.light {
+    --background-color: white;
+    --text-color: black;
+    --primary-color: blue;
+    --button-bg: rgb(57, 10, 247);
+    --button-text: black;
+
+    /* navbar */
+    --nav-bg: rgb(215, 215, 215);
+    --nav-text: black;
+    --nav-btn-bg: white;
+
+    /* login */
+    --login-bg: rgb(180, 180, 180);
+}
+
+/* dark theme */
+body.dark {
+    --background-color: rgb(26, 25, 25);
+    --text-color: white;
+    --primary-color: cyan;
+    --button-bg: rgb(45, 11, 238);
+    --button-text: white;
+
+    /* navbar */
+    --nav-bg: rgb(0, 0, 0);
+    --nav-text: white;
+    --nav-btn-bg: rgb(68, 68, 68);
+
+    /* login */
+    --login-bg: rgb(31, 31, 31);
 }

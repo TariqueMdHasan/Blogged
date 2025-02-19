@@ -1,0 +1,20 @@
+.catagory{
+    height: 80vh;
+    width: 50vw;
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    z-index: 100;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-5%, -48%);
+    border: 2px solid yellow;
+    border-radius: 10px;
+}
+@media (max-width: 992px){
+    .catagory{
+        width: 80vw;
+        height: 80vh;
+        transform: translate(-50%, -48%);
+    }
+}

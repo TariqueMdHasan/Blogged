@@ -1,0 +1,70 @@
+.navbar{
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: fixed; */
+}
+
+.nav-logo{
+    margin: 0 0 0 1rem;
+    /* margin: 0; */
+}
+
+.nav-menu{
+    height: 2rem;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1rem;
+    gap: 0.5rem;
+}
+
+.nav-theme-toggle-btn{
+    background-color: var(--nav-btn-bg);
+    color: var(--text-color);
+    border: none;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-theme-toggle-btn svg{
+    font-size: 1.5rem;
+}
+
+
+.nav-profile-Icon{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--nav-btn-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.nav-filter-Icon{
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: var(--nav-btn-bg);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+.nav-filter-Icon svg{
+    font-size: 1rem;
+}

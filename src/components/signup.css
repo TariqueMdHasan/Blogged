@@ -1,0 +1,28 @@
+.sign-class{
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-color: var(--nav-bg);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: auto;
+    /* margin: auto; */
+}
+.sign-class form span{
+    color: red;
+}
+.sign-class form p{
+    margin: 10px 0px;
+    text-align: center;
+}
+.sign-class form h1{
+    margin: 0;
+    text-align: center;
+}
+.sign-class-Reg-button{
+    border: none;
+    padding: 0px 3px;
+    margin-left: 3px;
+    background-color: var(--nav-btn-bg);
+    color: var(--text-color);      
+    cursor: pointer; 
+}
