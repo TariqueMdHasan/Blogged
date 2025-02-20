@@ -24,11 +24,6 @@ function Auth() {
             onClick={() => setIsLogin(false)}
           >Register</button>
       </div>
-      {/* {isLogin ?
-        <Login onToggleAuth={() => setIsLogin(false)} />
-        :
-        <Signup onToggleAuth={() => setIsLogin(true)} />
-      } */}
       <div className={`auth-form ${isLogin ? 'show-signup' : 'show-login'}`}>
         <Login onToggleAuth={() => setIsLogin(false)} />
         <Signup onToggleAuth={() => setIsLogin(true)} />
