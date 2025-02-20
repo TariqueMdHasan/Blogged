@@ -8,14 +8,24 @@
     width: auto;
     /* margin: auto; */
 }
+.login-class form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 95%;
+}
 .login-class form span{
     color: red;
+}
+.login-class form label{
+    margin-top: 10px;
 }
 .login-class form p{
     margin: 10px 0px;
     text-align: center;
 }
-.login-class form h1{
+.login-class h1{
     margin: 0;
     text-align: center;
 }
@@ -25,5 +35,45 @@
     margin-left: 3px;
     background-color: var(--nav-btn-bg);
     color: var(--text-color);      
+    cursor: pointer;
+}
+.login-class form input{
+    color: var(--text-color);
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    /* border: none; */
+    border-radius: 5px;
+    background: transparent;
+}
+.login-class-email{
+    border: 1.5px solid rgb(255, 0, 208);
+}
+.login-class-password{
+    border: 1.5px solid rgb(0 214 221);
+}
+.login-btn{
+    border: none;
+    background: blue;
+    padding: 5px;
+    margin-top: 13px;
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 1px);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.login-class-checkbox{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+.login-class-checkbox h5{
+    margin: 10px;
+}
+#pw-cd{
+    width: 15px;
     cursor: pointer;
 }

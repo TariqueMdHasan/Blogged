@@ -1,28 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './login.css'
+import { useNavigate } from 'react-router-dom'
+
 
 function Login({ onToggleAuth }) {
+    const navigate = useNavigate()
+    const [showPassword, setShowPassword] = useState(false)
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword)
+    }
+
+
+
+
+
   return (
     <div className='login-class'>
-        <form action="submit">
-            <h1>Login</h1>
-            <label htmlFor="login-email">Email</label> <br />
+        <h1>Login</h1>
+        {/* <form action="submit"> */}
+        <form >
+            
+            <label htmlFor="login-email">Email</label> 
             <input 
                 type="email" 
                 id='login-email' 
                 className='login-class-email'
                 placeholder='Enter your email'
-            /> <br />
-            <span>*</span> <br />
-            <label htmlFor="login-password">Password</label> <br />
+            /> 
+            {/* <span>*</span> <br /> */}
+            <label htmlFor="login-password">Password</label> 
             <input 
-                type="password" 
+                type= {showPassword ? 'text' : 'password'} 
                 id='login-password' 
                 className='login-class-password'
                 placeholder='Enter your password'
-            /> <br />
-            <span>*</span> <br />
-            <button type='submit' >Submit</button> <br />
+            /> 
+            {/* <span>*</span> <br /> */}
+            <div className='login-class-checkbox'>
+                <input 
+                    onChange={handleShowPassword}
+                    type="checkbox" 
+                    id='pw-cd' 
+                />
+                <h5 >Show Password</h5>
+            </div>
+            <button 
+                // type='submit' 
+                className='login-btn'
+                onClick={() => navigate('/blog')} 
+            >Login</button> 
             <p>Do not have an account? Please 
                <button
                     className='login-class-Reg-button'
@@ -31,7 +57,6 @@ function Login({ onToggleAuth }) {
                >
                 Register</button> 
             </p> 
-            {/* <button>Sign up</button> */}
         </form>
     </div>
   )

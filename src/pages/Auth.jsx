@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import Signup from '../components/Signup'
 import './Auth.css'
 import Login from '../components/Login'
+// import { useNavigate } from 'react-router-dom'
 
 function Auth() {
+  // const navigate = useNavigate()
   const [isLogin, setIsLogin] = useState(true)
 
 

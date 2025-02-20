@@ -5,16 +5,33 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     text-align: left;
     width: auto;
-    /* margin: auto; */
+
 }
+
 .sign-class form span{
     color: red;
 }
-.sign-class form p{
-    margin: 10px 0px;
-    text-align: center;
+.sign-class form label{
+    margin-top: 10px;
 }
-.sign-class form h1{
+.sign-class form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 95%;
+}
+
+.sign-class-form input{
+    color: var(--text-color);
+    width: 100%;
+}
+.sign-class form p{
+    margin: 0px;
+    text-align: center;
+    margin-top: -5px;
+}
+.sign-class h1{
     margin: 0;
     text-align: center;
 }
@@ -24,5 +41,56 @@
     margin-left: 3px;
     background-color: var(--nav-btn-bg);
     color: var(--text-color);      
-    cursor: pointer; 
+    cursor: pointer;
+
+    
+}
+.reg-btn {
+    border: none;
+    background: blue;
+    padding: 5px;
+    margin-top: 13px;
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 1px);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.sign-class-name, 
+.sign-class-email, 
+.sign-class-userName,
+.sign-class-password {
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+}
+.sign-class-name{
+    border: 1.5px solid green;
+}
+.sign-class-email{
+    border: 1.5px solid yellow;
+}
+.sign-class-userName{
+    border: 1.5px solid orange;
+}
+.sign-class-password{
+    border: 1.5px solid rgb(0, 255, 195);
+}
+
+
+.reg-class-checkbox{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+.reg-class-checkbox h5{
+    margin: 10px;
+}
+#reg-pw-cd{
+    width: 15px;
+    cursor: pointer;
 }

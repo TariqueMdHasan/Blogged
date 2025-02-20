@@ -12,6 +12,7 @@
 .nav-logo{
     margin: 0 0 0 1rem;
     /* margin: 0; */
+    cursor: pointer;
 }
 
 .nav-menu{
@@ -42,11 +43,13 @@
 
 
 .nav-profile-Icon{
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
+    /* height: 2rem; */
+    /* width: 2rem; */
+    padding: 10px 20px;
+    border-radius: 2px;
     cursor: pointer;
-    background-color: var(--nav-btn-bg);
+    background-color: blue;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
