@@ -218,8 +218,8 @@
         height: 15vh;
     } */
     .blogForm-editor {
-        min-height: 39vh;  /* Adjust height for mobile */
-        max-height: 39vh;
+        min-height: 31vh;  /* Adjust height for mobile */
+        max-height: 31vh;
         overflow: hidden;  /* Prevent page from scrolling */
         display: flex;
         flex-direction: column;
