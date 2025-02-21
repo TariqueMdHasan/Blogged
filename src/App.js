@@ -8,6 +8,9 @@ import Feed from './pages/Feed';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
+
+
+
   return (
     <Router>
       <Navbar />

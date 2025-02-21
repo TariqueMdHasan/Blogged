@@ -203,7 +203,7 @@
         /* height: 89vh; */
         height: 85vh;
         position: fixed;
-        border: 2px solid yellow;
+        /* border: 2px solid yellow; */
         /* top: 55%; */
         /* left: 50%; */
         /* transform: translate(-50%, -50%); */
@@ -244,5 +244,14 @@
     .blogForm-header{
         height: 6vh;
     }
-    
+    /* .navbar{
+        display: none;
+    } */
+    /* .hide-navbar {
+        display: none;
+    } */
+    .blogForm-imagePreview{
+        max-width: 100px;
+        max-height: 100px;
+    }
 }
