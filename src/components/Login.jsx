@@ -47,7 +47,7 @@ function Login({ onToggleAuth }) {
             <button 
                 // type='submit' 
                 className='login-btn'
-                onClick={() => navigate('/feed')} 
+                // onClick={() => navigate('/feed')} 
             >Login</button> 
             <p>Do not have an account? Please 
                <button
@@ -58,6 +58,9 @@ function Login({ onToggleAuth }) {
                 Register</button> 
             </p> 
         </form>
+        <button
+            onClick={() => navigate('/feed')}
+        >feed</button>
     </div>
   )
 }

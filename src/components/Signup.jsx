@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import './signup.css'
+// import { useNavigate } from 'react-router-dom'
 
 function Signup({ onToggleAuth }) {
+    // const navigate = useNavigate()
     const [showPassword, setShowPassword] = useState(false)
     const handleShowPassword = () => {
         setShowPassword(!showPassword)
@@ -54,7 +56,11 @@ function Signup({ onToggleAuth }) {
                 />
                 <h5 >Show Password</h5>
             </div>
-            <button type='submit' className='reg-btn' >submit</button> <br />
+            <button 
+                type='submit' 
+                className='reg-btn' 
+                // onClick={() => navigate('/feed')}
+            >submit</button> <br />
             <p>Already have an account? Please 
                 <button
                     className='sign-class-Reg-button'

@@ -190,19 +190,23 @@
         border-left: none;
         border-bottom: 2px solid var(--nav-text);
     }
+    .blogForm-input-group{
+        height: 10vh;
+    }
     /* .blogForm-editor{
         min-width: 35vh;
         max-width: 35vh;
         overflow-y: auto;
     } */
     .blog-form {
-        width: 100vw;
-        height: 89vh;
+        width: 90vw;
+        /* height: 89vh; */
+        height: 85vh;
         position: fixed;
         /* border: 2px solid yellow; */
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        /* top: 55%; */
+        /* left: 50%; */
+        /* transform: translate(-50%, -50%); */
         /* border-radius: 10px; */
         /* height: auto; */
         background-color: var(--nav-bg);
@@ -236,6 +240,9 @@
         overflow-y: auto !important; /* Enable scrolling inside the editor */
         min-height: 30vh; /* Adjust if needed */
         max-height: 30vh; /* Ensures it doesn't push other elements */
+    }
+    .blogForm-header{
+        height: 6vh;
     }
     
 }
