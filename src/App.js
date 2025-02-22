@@ -6,6 +6,7 @@ import Auth from './pages/Auth';
 import BlogForm from './components/BlogForm';
 import Feed from './pages/Feed';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import MyProfile from './components/MyProfile';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/blogForm" element={<BlogForm/>} />
+        <Route path="/myProfile" element={<MyProfile/>} />
       </Routes>
     </Router>
   );

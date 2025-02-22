@@ -19,6 +19,14 @@ body.light {
 
     /* login */
     --login-bg: rgb(180, 180, 180);
+
+
+    /* feed */
+    --feed-bg: rgb(240, 240, 240);
+    --feed-blog-bg: white;
+
+    /* loader */
+    --loader-bg: rgba(255, 255, 255, 0.8);
 }
 
 /* dark theme */
@@ -36,4 +44,12 @@ body.dark {
 
     /* login */
     --login-bg: rgb(17 16 16);
+
+    /* feed */
+    --feed-bg: rgb(26, 25, 25);
+    --feed-blog-bg: black;
+
+
+    /* loader */
+    --loader-bg: rgba(29, 29, 29, 0.847);
 }

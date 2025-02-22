@@ -1,0 +1,136 @@
+.MyProfile{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+}
+.MyProfile-information{
+    width: 30%;
+    height: 100%;
+    border-right: 1px solid var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.MyProfile-information-container{
+    width: 80%;
+    height: auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.MyProfile-information-photo-container{
+    height: 17vh;
+    aspect-ratio: 1/1;
+    border: 2px solid yellow ;
+    border-radius: 5px;
+}
+.MyProfile-information-container h2,
+.MyProfile-information-container p{
+    margin: 0;
+}
+.MyProfile-information-container h2{
+    margin-top: 1rem;
+}
+.MyProfile-information-About-Me{
+    width: 100%;
+    height: auto;
+    border: 2px solid rgb(133, 242, 100);
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+.MyProfile-information-About-Me p{
+    margin: 10px;
+}
+.MyProfile-information-Edit-button{
+    padding: 5px 10px;
+    background-color: #FFB300;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+    color: var(--background-color);
+    transition: all 0.3s ease-in-out;
+}
+.MyProfile-information-Edit-button:hover{
+    color: var(--text-color);
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px #525252;
+    backdrop-filter: blur(5px);
+}
+
+
+
+
+.MyProfile-blogs-nav-container{
+    width: 70%;
+    height: 100%;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+}
+.MyProfile-blogs-nav-parent{
+    width: 100%;
+    height: 7vh;
+    border-bottom: 1px solid var(--text-color);
+    background-color: var(--background-color);
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.MyProfile-blogs-nav{
+    height: 5vh;
+    width: 69%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--nav-bg);
+    border-radius: 2.5vh;
+    overflow: hidden;
+    position: relative;
+}
+.MyProfile-slider {
+    position: absolute;
+    width: 33.33%; 
+    height: 100%;
+    background-color: blue;
+    border-radius: 2.5vh;
+    transition: left 0.3s ease-in-out;
+}
+.MyProfile-blogs-nav-MyComments,
+.MyProfile-blogs-nav-MyAnalitycs,
+.MyProfile-blogs-nav-MyBlogs{
+    height: 100%;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: inherit;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+}
+.MyProfile-blogs-nav-MyBlogs.active{
+    /* background-color: blue; */
+    color: white;
+}
+.MyProfile-blogs-nav-MyComments.active{
+    /* background-color: blue; */
+    color: white;
+}
+.MyProfile-blogs-nav-MyAnalitycs.active{
+    /* background-color: blue; */
+    color: white;
+}
+
+
+
+.MyProfile-blogs-AllData{
+    width: 100%;
+    height: 83vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

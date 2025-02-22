@@ -1,0 +1,46 @@
+.Feed{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+
+}
+.FeedLeft{
+    height: 100%;
+    width: 20%;
+    background-color: var(--feed-bg);
+    /* float: left; */
+    border-right: 1px solid var(--text-color);
+}
+.FeedCenter{
+    height: 100%;
+    width: 60%;
+    /* background-color: var(--background-color); */
+    background-color: var(--feed-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* float: ; */
+}
+.FeedRight{
+    height: 100%;
+    width: 20%;
+    background-color: var(--feed-bg);
+    /* float: right; */
+    border-left: 1px solid var(--text-color);
+}
+
+.WriteBlogButton{
+    background: #6dff02;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 1rem 0 0 1rem;
+}
+.WriteBlogButton:hover{
+    background: #4cd302;
+}

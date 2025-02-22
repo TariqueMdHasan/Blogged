@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-items: center;
     /* position: fixed; */
+    /* border-bottom: 1px solid var(--text-color); */
 }
 
 .nav-logo{
@@ -54,6 +55,9 @@
     align-items: center;
     justify-content: center;
     border: none;
+}
+.logout-btn{
+    background-color: red;
 }
 
 .nav-filter-Icon{

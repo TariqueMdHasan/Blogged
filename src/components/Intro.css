@@ -1,0 +1,42 @@
+.Intro{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: flex-start; */
+}
+.ProfileImage{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: black;
+    cursor: pointer;
+}
+.IntroLeft{
+    min-height: 40%;
+    width: 100%;
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.intro-myName{
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 10px 0 0 0;
+    /* background-color: red; */
+}
+.intro-myName:hover{
+    text-decoration: underline;
+}
+.intro-myUserName{
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0;
+}
+.intro-myUserName:hover{
+    text-decoration: underline;
+}
+

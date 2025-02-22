@@ -1,0 +1,25 @@
+/* .loader{
+    display: flex;
+    left: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+} */
+
+
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--loader-bg);
+    z-index: 9999;
+}

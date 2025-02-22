@@ -1,35 +1,62 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./navbar.css";
 import { useTheme } from "../ThemeContext";
 import { FaSun } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
-import { FaFilter } from "react-icons/fa";
-import Catagory from "./catagory";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { IoHomeSharp } from "react-icons/io5";
 
 
 function Navbar() {
-  const navgate = useNavigate();
+  const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
-  const [showCatagory, setShowCatagory] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const location = useLocation();
+
+  useEffect(() => {
+    
+        const token = localStorage.getItem("token")
+        // if (token) {
+        //   setIsLoggedIn(true)
+        // } else {
+        //   setIsLoggedIn(false)
+        // }
+
+        // same as if else condidition
+        setIsLoggedIn(!!token)
+     
+  }, [location.pathname])
+
+  const handleAuthentication = () => {
+    if (isLoggedIn) {
+      localStorage.removeItem("token")
+      setIsLoggedIn(false)
+      navigate('/')
+    } else {
+      navigate("/auth")
+    }
+  }
+
+
 
   return (
     <div>
       <nav className="navbar">
-        <h1 
+        <h1
           className="nav-logo"
           onClick={() => {
-            navgate("/");
+            navigate("/");
           }}
         >BLOGGED</h1>
         <div className="nav-menu">
           <button
-            className="nav-filter-Icon"
-            onClick={() =>
-              setShowCatagory(!showCatagory)
-            }
+          onClick={() => {
+            navigate("/feed");
+          }}
+          className="nav-filter-Icon"
+          
           >
-            <FaFilter />
+            <IoHomeSharp />
           </button>
           <button
             onClick={() => {
@@ -41,18 +68,18 @@ function Navbar() {
               theme === "light" ? <FaSun /> : <FaMoon />
             }
           </button>
-          <button 
-            className="nav-profile-Icon"
-            onClick={() => {
-              navgate("/auth");
-            }}
+          <button
+            // className="nav-profile-Icon"
+            className={`nav-profile-Icon ${isLoggedIn ? "logout-btn" : "register-btn"}`}
+            onClick={handleAuthentication}
           >
-            Register
+            {
+              isLoggedIn ? "Logout" : "Register"
+            }
           </button>
         </div>
 
       </nav>
-      {showCatagory && <Catagory />}
     </div>
   );
 }

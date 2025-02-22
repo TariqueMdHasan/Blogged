@@ -1,0 +1,14 @@
+.MyOwn-Blogs{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+}
+.MyOwn-Blogs::-webkit-scrollbar {
+    display: none;
+}

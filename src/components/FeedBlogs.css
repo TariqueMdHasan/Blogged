@@ -1,0 +1,171 @@
+.FeedBlogs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+    width: 94%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+}
+.FeedBlogs::-webkit-scrollbar {
+    display: none;
+}
+
+.FeedBlog-container{
+    width: 90%;
+    height: 40%;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: var(--feed-blog-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 4px 30px #525252;
+    backdrop-filter: blur(5px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.FeedBlog-Author-Information{
+    width: 96%;
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.BlogFeed-Author-Identity{
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.FeedBlog-Autohor-PPic{
+    height: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    border: 2px solid var(--text-color);
+}
+.FeedBlog-author-img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.FeedBlog-Author-Name-UserName{
+    height: 100%;
+    width: 60%;
+    margin-left: 1rem;
+}
+.FeedBlog-delete-edit{
+    height: 100%;
+    width: auto;
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+.FeedBlog-delete-edit-edit{
+    padding: 3px 15px;
+    background-color: #43ff43;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.FeedBlog-delete-edit-edit:hover{
+    background-color: green;
+}
+.FeedBlog-delete-edit-edit svg{
+    color: black;
+}
+.FeedBlog-delete-edit-edit svg:hover{
+    color: white;
+}
+.FeedBlog-delete-edit-delete{
+    padding: 3px 15px;
+    background-color: #ff3d3d;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.FeedBlog-delete-edit-delete:hover{
+    background-color: darkred;
+}
+.FeedBlog-delete-edit-delete svg{
+    color: black;
+}
+.FeedBlog-delete-edit-delete svg:hover{
+    color: white;
+}
+
+.FeedBlog-Blog-Information{
+    width: 96%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.FeedBlog-Blog-Image{
+    height: 90%;
+    aspect-ratio: 1/1;
+    border: 2px solid rgb(79, 244, 79);
+    border-radius: 5px;
+}
+.FeedBlog-blog-img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.Feedblog-content-texts{
+    height: 90%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.FeedBlog-title{
+    height: 15%;
+    width: 100%;
+}
+.FeedBlog-content{
+    width: 100%;
+    max-height: 70%;
+    min-height: 15%;
+}
+.FeedBlog-Date-Comment{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.FeedBlog-date{
+    margin-left: 1rem;
+}
+
+.FeedBlog-Total-Comments{
+    background-color: rgb(255, 0, 0);
+    border-radius: 2px;
+    padding: 0 5px;
+    cursor: pointer;
+    transition: background color 0.3s;
+}
+.FeedBlog-Total-Comments:hover{
+    background-color: rgb(196, 0, 0);
+    color: white;
+}
+.FeedBlog-content-para{
+    margin: 0;
+    margin-left: 1rem;
+}
+.FeedBlog-content-title{
+    margin: 0;
+    margin-left: 1rem;
+}
