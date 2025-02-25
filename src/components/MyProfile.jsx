@@ -1,12 +1,56 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './MyProfile.css'
 import { FaUserEdit } from "react-icons/fa";
 import MyPBlogs from './myProfileCom/MyPBlogs'
 import MyPAnalytics from './myProfileCom/MyPAnalytics';
 import MyPComments from './myProfileCom/MyPComments';
+import axios from 'axios'
 
 function MyProfile() {
   const [active, setActive] = useState("MyPBlogs")
+  const [user, setUser] = useState(null);
+   const [error, setError] = useState("")
+
+
+
+
+
+  useEffect(()=> {
+    const fetchUserProfile = async() => {
+      const token = localStorage.getItem("token");
+      if(!token){
+        setError("Please Login")
+        return
+      }
+      try{
+        const response = await axios.get("https://blogbackend-wi2j.onrender.com/api/outh/getuserdata",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            }
+          }
+        )
+        setUser(response.data.user)
+        console.log(response.data.user)
+
+      }catch(error){
+        console.error("error while fetching data")
+        setError("something went wrong")
+      }
+    }
+    fetchUserProfile()
+  },[])
+
+
+  if(error) return <p>{error}</p>
+  if(!user) return <p>Loading...</p>
+
+
+
+
+
+
+
 
   const renderComponent = () => {
     switch (active) {
@@ -41,11 +85,11 @@ function MyProfile() {
       <div className='MyProfile-information'>
         <div className='MyProfile-information-container'>
           <div className='MyProfile-information-photo-container'>
-            <img src="" alt="MyPr" />
+            <img src={user.profilePicture}  alt="MyPr" />
           </div>
-          <h2>Md Tarique Hasan</h2>
-          <p>@tariqueMdHasan</p>
-          <p>mdtariquehasan@gmail.com</p>
+          <h2>{user.name}</h2>
+          <p>@{user.userName}</p>
+          <p>email</p>
           <div className='MyProfile-information-About-Me'>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ipsa nam harum quas libero amet delectus debitis porro sequi dolores odit, et suscipit voluptates explicabo? Aliquam animi eligendi modi vel!

@@ -141,10 +141,10 @@ function MyPBlogs() {
                   </p>
                 </div>
                 <div className="FeedBlog-content">
-                  <p className="FeedBlog-content-para">
+                  <div className="FeedBlog-content-para">
                     {/* {blog.content} */}
                     {/* {blog.content.length > 180 ? blog.content.substring(0, 180) + "..." : blog.content} */}
-                    <div
+                    <div 
                       dangerouslySetInnerHTML={{
                         __html:
                           blog?.content.length > 180
@@ -152,7 +152,7 @@ function MyPBlogs() {
                             : blog?.content,
                       }}
                     />
-                  </p>
+                  </div>
                 </div>
                 <div className="FeedBlog-Date-Comment">
                   <div className="FeedBlog-date">

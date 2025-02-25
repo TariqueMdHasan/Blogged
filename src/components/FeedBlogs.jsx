@@ -136,7 +136,7 @@ function FeedBlogs() {
                   </p>
                 </div>
                 <div className="FeedBlog-content">
-                  <p className="FeedBlog-content-para">
+                  <div className="FeedBlog-content-para">
                     {/* {blog.content} */}
                     {/* {blog.content.split(" ").slice(0, 20).join(" ") + (blog.content.split(" ").length > 20 ? "..." : "")} */}
                     {/* {blog.content.length > 180
@@ -152,7 +152,7 @@ function FeedBlogs() {
                     />
                     {/* {blog.content?.length > 180 ? blog.content.substring(0, 180) + "..." : blog.content || "No Content"} */}
                     {/* {blog.content && blog.content.length > 180 ? blog.content.substring(0, 180) + "..." : blog.content || "No Content"} */}
-                  </p>
+                  </div>
                 </div>
                 <div className="FeedBlog-Date-Comment">
                   <div className="FeedBlog-date">
