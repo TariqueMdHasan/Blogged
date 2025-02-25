@@ -85,11 +85,15 @@ function MyProfile() {
       <div className='MyProfile-information'>
         <div className='MyProfile-information-container'>
           <div className='MyProfile-information-photo-container'>
-            <img src={user.profilePicture}  alt="MyPr" />
+            <img 
+              src={user.profilePicture || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}  
+              alt="MyPr"
+              className='MyProfile-information-photo'
+            />
           </div>
           <h2>{user.name}</h2>
           <p>@{user.userName}</p>
-          <p>email</p>
+          <p>{user.email}</p>
           <div className='MyProfile-information-About-Me'>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ipsa nam harum quas libero amet delectus debitis porro sequi dolores odit, et suscipit voluptates explicabo? Aliquam animi eligendi modi vel!
