@@ -24,7 +24,7 @@ function Intro() {
           }
         )
         setUser(response.data.user)
-        console.log(response.data.user)
+        // console.log(response.data.user)
 
       }catch(error){
         setError("Failed to get user data")
@@ -48,7 +48,11 @@ function Intro() {
           }}
         >
           {
-            user.profilePicture ? <img src={user.profilePicture} alt="profile identity" /> :
+            user.profilePicture ? 
+            <img src={user.profilePicture} 
+              alt="profile identity" 
+              className='profile-visual-identity'
+            /> :
             null
           }
         </div >

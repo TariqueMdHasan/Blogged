@@ -1,0 +1,299 @@
+.BlogPage{
+    height: 90vh;
+    width: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.BlogPage-blog-comment-container{
+    width: 95%;
+    height: auto;
+    /* border: 1px solid red; */
+    display: flex;
+
+    /* overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none; */
+}
+.BlogPage-blog-container{
+    width: 60%;
+    height: auto;
+    /* background-color: rgb(79, 79, 21); */
+    /* margin-bottom: 1rem; */
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.BlogPage-blog-container::-webkit-scrollbar {
+    display: none;
+}
+.BlogPage-blog-author-container{
+    height: 41vh;
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+}
+.BlogPage-blog-image-parent{
+    max-height: 15rem;
+    aspect-ratio: 1/1;
+    /* max-width: 40vw; */
+    border: 2px solid gold;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+.BlogPage-author-info{
+    width: auto;
+    height: 5rem;
+    margin: 1rem 0 0 1rem;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.BlogPage-blog-image{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.feedPage-author-info-name-userName{
+    width: auto;
+    height: 100%;
+    margin-left: 1rem;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+}
+.feedPage-author-info-name-userName p{
+    margin: 0;
+}
+.BlogPage-bottom-blank{
+    height: 10vh;
+    width: 100%;
+}
+/* .BlogPage-Comments{
+    width: 40%;
+    height: 100%;
+    background-color: blueviolet;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+
+
+
+
+.BlogPage-commentForm-comments{
+    width: 40%;
+    height: 100%;
+}
+.BlogPage-commentForm{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.BlogPage-commentForm-form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.BlogPage-commentForm form input{
+    width: 70%;
+    height: 2rem;
+    border: 2px solid #68eedb;
+    border-radius: 5px;
+    background: transparent;
+    outline: none;
+    color: var(--text-color);
+}
+.BlogPage-commentForm form button{
+    width: 3rem;
+    height: 2rem;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.BlogPage-commentForm form button svg{
+    width: 2rem;
+}
+.BlogPage-commentForm form button:hover{
+    background-color: darkblue;
+}
+.BlogPage-Comments{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.BlogPage-Comments::-webkit-scrollbar {
+    display: none;
+}
+.BlogPage-Comments-Author-Information{
+    width: 85%;
+    height: auto;
+    /* background-color: brown; */
+    margin: 10px 0;
+    /* border: 2px solid red; */
+    border-radius: 5px;
+    background-color: var(--feed-blog-bg);
+    box-shadow: 0 4px 30px #525252;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.BlogPage-Comments-Author-Identity{
+    width: 100%;
+    height: 4rem;
+    /* background-color: rgb(22, 5, 250); */
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 10px; */
+}
+.BlogPage-Comments-Autohor-PPic{
+    height: 60%;
+    aspect-ratio: 1/1;
+    border: 2px solid aquamarine;
+    border-radius: 5px;
+    /* margin: 10px 0 0 10px; */
+    margin-left: 1rem;
+}
+.BlogPage-Comments-for-delete-edit{
+    height: 98%;
+    width: auto;
+    /* background-color: rgb(15, 38, 57); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.BlogPage-Comments-delete-edit{
+    height: 100%;
+    width: auto;
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 1rem 1rem 0 0;
+}
+.BlogPage-Comments-delete-edit-edit{
+    padding: 3px 15px;
+    background-color: #43ff43;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.BlogPage-Comments-delete-edit-edit:hover{
+    background-color: green;
+}
+.BlogPage-Comments-delete-edit-edit svg{
+    color: black;
+}
+.BlogPage-Comments-delete-edit-edit svg:hover{
+    color: white;
+}
+.BlogPage-Comments-delete-edit-delete{
+    padding: 3px 15px;
+    background-color: #ff3d3d;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.BlogPage-Comments-delete-edit-delete:hover{
+    background-color: darkred;
+}
+.BlogPage-Comments-delete-edit-delete svg{
+    color: black;
+}
+.BlogPage-Comments-delete-edit-delete svg:hover{
+    color: white;
+}
+
+
+
+.BlogPage-Comments-author-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.BlogPage-Comments-Author-Name-UserName div p{
+    margin: 0 0 0 1rem;
+}
+.BlogPage-Comments-date-btn{
+    height: auto;
+    width: 100%;
+    /* margin-left: 1rem;
+    marg */
+
+}
+.MyCommBlogPage-Commentsents p{
+    margin: 10px;
+}
+.BlogPage-Comments-date-btn p{
+    margin-left: 1rem;
+}
+.BlogPage-Comments-date{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+}
+.BlogPage-Comments-date p{
+    margin-left: 1rem;
+}
+.BlogPage-Comments-date button{
+    margin-right: 1rem;
+    padding: 3px 10px;
+    background-color: #FFB300;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--background-color);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.BlogPage-Comments-date button:hover{
+    color: var(--text-color);
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px #525252;
+    backdrop-filter: blur(5px);
+}

@@ -3,6 +3,10 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./BlogForm.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+import Loader from './Loader'
+
 
 const BlogForm = () => {
     const navigate = useNavigate();
@@ -10,15 +14,17 @@ const BlogForm = () => {
         title: "",
         content: "",
         category: "",
-        image: null,
+        blogImages: null,
     });
 
     const [imagePreview, setImagePreview] = useState(null);
+    const [loading, setLoading] = useState(false);
+
+    // Handle text input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
-
 
     const handleContentChange = (value) => {
         setFormData({ ...formData, content: value });
@@ -27,25 +33,95 @@ const BlogForm = () => {
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            setFormData({ ...formData, image: file });
-            setImagePreview(URL.createObjectURL(file)); // Generate preview
+            setFormData({ ...formData, blogImages: file });
+
+            // Revoke old image preview URL
+            if (imagePreview) {
+                URL.revokeObjectURL(imagePreview);
+            }
+
+            setImagePreview(URL.createObjectURL(file));
         }
+        console.log("Selected Image:", file);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form Data Submitted:", formData);
-
+        setLoading(true);
+    
+        // Trim and validate fields
+        const plainTextContent = formData.content.replace(/<(.|\n)*?>/g, "").trim();
+        
+        if (!formData.title.trim()) {
+            toast.error("Please enter a title");
+            setLoading(false);
+            return;
+        }
+        
+        if (!plainTextContent || plainTextContent === "&nbsp;") {
+            toast.error("Please enter content");
+            setLoading(false);
+            return;
+        }
+    
+        if (!formData.category) {
+            toast.error("Please select a category");
+            setLoading(false);
+            return;
+        }
+    
+        if (!formData.blogImages) {
+            toast.error("Please upload an image");
+            setLoading(false);
+            return;
+        }
+    
+        const token = localStorage.getItem("token");
+        if (!token) {
+            toast.info("User is not authenticated. Please log in.");
+            setLoading(false);
+            return;
+        }
+    
+        // Create FormData
         const data = new FormData();
         data.append("title", formData.title);
         data.append("content", formData.content);
         data.append("category", formData.category);
-        if (formData.image) {
-            data.append("image", formData.image);
+        data.append("blogImages", formData.blogImages);
+    
+        console.log("Form Data Before Submit:", Object.fromEntries(data.entries()));
+    
+        try {
+            const response = await axios.post(
+                "https://blogbackend-wi2j.onrender.com/api/blog/create",
+                data,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+    
+            if (response.status === 201 || response.status === 200) {
+                toast.success("Blog Created Successfully!");
+                navigate("/feed");
+            } else {
+                toast.error("Blog creation failed. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error submitting blog post:", error);
+            toast.error(error.response?.data?.message || "Failed to submit blog post.");
+        } finally {
+            setLoading(false);
         }
-
-
     };
+    
+    
+
+
+
+
 
     return (
         <div className="blog-form">
@@ -55,14 +131,15 @@ const BlogForm = () => {
             <button
                 className="blogForm-cancel"
                 onClick={() => navigate('/feed')}
-                // onClick={() => window.location.href = '/feed'}
                 type="button"
-
-            >Cancel</button>
-            <form onSubmit={handleSubmit} className="blogForm-form" action="submit">
+            >
+                Cancel
+            </button>
+            <form onSubmit={handleSubmit} className="blogForm-form">
                 <div className="blogForm-form-inputs">
+                    {/* Content */}
                     <div className="blogForm-groupContent">
-                        <label className="blogForm-groupContent-label" >Content:</label>
+                        <label className="blogForm-groupContent-label">Content:</label>
                         <ReactQuill
                             value={formData.content || ""}
                             onChange={handleContentChange}
@@ -70,10 +147,11 @@ const BlogForm = () => {
                             placeholder="Write something amazing..."
                         />
                     </div>
+                    {/* Title & Category */}
                     <div className="blogForm-form-group">
                         <div className="blogForm-input-group">
                             <div className="blogForm-groupTitle">
-                                <label className="blogForm-gt-label" >Title:</label>
+                                <label className="blogForm-gt-label">Title:</label>
                                 <input
                                     className="blogForm-inputTitle"
                                     type="text"
@@ -85,7 +163,7 @@ const BlogForm = () => {
                                 />
                             </div>
                             <div className="blogForm-groupCategory">
-                                <label className="blogForm-gc-label" >Category:</label>
+                                <label className="blogForm-gc-label">category:</label>
                                 <select
                                     name="category"
                                     value={formData.category}
@@ -93,15 +171,24 @@ const BlogForm = () => {
                                     required
                                     className="blogForm-select"
                                 >
-                                    <option value="">Select a category</option>
-                                    <option value="technology">Technology</option>
-                                    <option value="health">Health</option>
-                                    <option value="lifestyle">Lifestyle</option>
-                                    <option value="education">Education</option>
+                                    <option value="">Select a catagory</option>
+                                    <option value="Technology">Technology</option>
+                                    <option value="Health">Health</option>
+                                    <option value="Fashion">Fashion</option>
+                                    <option value="Food">Food</option>
+                                    <option value="Travel">Travel</option>
+                                    <option value="Music">Music</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Entertainment">Entertainment</option>
+                                    <option value="Others">Others</option>
                                 </select>
+
                             </div>
                         </div>
 
+                        {/* Image Upload */}
                         <div className="blogForm-groupImage">
                             <label>Upload Image:</label>
                             <input
@@ -117,8 +204,11 @@ const BlogForm = () => {
                                     className="blogForm-imagePreview"
                                 />
                             )}
-                            <button type="submit" className="blogForm-button">Submit</button>
 
+                            {/* Submit Button */}
+                            <button type="submit" className="blogForm-button" disabled={loading}>
+                                {loading ? <Loader/> : "Submit"}
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -126,7 +216,6 @@ const BlogForm = () => {
         </div>
     );
 };
-
 
 export default BlogForm;
 
@@ -136,212 +225,3 @@ export default BlogForm;
 
 
 
-
-
-// import React, { useState, useEffect } from "react";
-// import ReactQuill from "react-quill";
-// import "react-quill/dist/quill.snow.css";
-// import "./BlogForm.css";
-
-// const BlogForm = () => {
-//     const [formData, setFormData] = useState({
-//         title: "",
-//         content: "",
-//         category: "",
-//         image: null,
-//     });
-
-//     const [imagePreview, setImagePreview] = useState(null);
-//     const [step, setStep] = useState(1);
-//     const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
-
-//     // Handle screen resizing
-//     useEffect(() => {
-//         const handleResize = () => setIsMobile(window.innerWidth < 992);
-//         window.addEventListener("resize", handleResize);
-//         return () => window.removeEventListener("resize", handleResize);
-//     }, []);
-
-//     const handleChange = (e) => {
-//         const { name, value } = e.target;
-//         setFormData({ ...formData, [name]: value });
-//     };
-
-//     const handleContentChange = (value) => {
-//         setFormData({ ...formData, content: value });
-//     };
-
-//     const handleImageChange = (e) => {
-//         const file = e.target.files[0];
-//         if (file) {
-//             setFormData({ ...formData, image: file });
-//             setImagePreview(URL.createObjectURL(file));
-//         }
-//     };
-
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         console.log("Form Data Submitted:", formData);
-//         const data = new FormData();
-//         data.append("title", formData.title);
-//         data.append("content", formData.content);
-//         data.append("category", formData.category);
-//         if (formData.image) {
-//             data.append("image", formData.image);
-//         }
-//     };
-
-//     return (
-//         <div className="blog-form">
-//             <div className="blogForm-header">
-//                 <h2>Create a Blog Post</h2>
-//             </div>
-//             <form onSubmit={handleSubmit} className="blogForm-form">
-//                 {/* Desktop View (Normal Layout) */}
-//                 {!isMobile && (
-//                     <div className="blogForm-form-inputs">
-//                         <div className="blogForm-groupContent">
-//                             <label className="blogForm-groupContent-label">Content:</label>
-//                             <ReactQuill
-//                                 value={formData.content || ""}
-//                                 onChange={handleContentChange}
-//                                 className="blogForm-editor"
-//                                 placeholder="Write something amazing..."
-//                             />
-//                         </div>
-//                         <div className="blogForm-form-group">
-//                             <div className="blogForm-input-group">
-//                                 <div className="blogForm-groupTitle">
-//                                     <label className="blogForm-gt-label">Title:</label>
-//                                     <input
-//                                         className="blogForm-inputTitle"
-//                                         type="text"
-//                                         name="title"
-//                                         placeholder="Enter title"
-//                                         value={formData.title}
-//                                         onChange={handleChange}
-//                                         required
-//                                     />
-//                                 </div>
-//                                 <div className="blogForm-groupCategory">
-//                                     <label className="blogForm-gc-label">Category:</label>
-//                                     <select
-//                                         name="category"
-//                                         value={formData.category}
-//                                         onChange={handleChange}
-//                                         required
-//                                         className="blogForm-select"
-//                                     >
-//                                         <option value="">Select a category</option>
-//                                         <option value="technology">Technology</option>
-//                                         <option value="health">Health</option>
-//                                         <option value="lifestyle">Lifestyle</option>
-//                                         <option value="education">Education</option>
-//                                     </select>
-//                                 </div>
-//                             </div>
-//                             <div className="blogForm-groupImage">
-//                                 <label>Upload Image:</label>
-//                                 <input
-//                                     type="file"
-//                                     accept="image/*"
-//                                     onChange={handleImageChange}
-//                                     className="blogForm-fileInput"
-//                                 />
-//                                 {imagePreview && (
-//                                     <img
-//                                         src={imagePreview}
-//                                         alt="Preview"
-//                                         className="blogForm-imagePreview"
-//                                     />
-//                                 )}
-//                             </div>
-//                             <button type="submit" className="blogForm-button">Submit</button>
-//                         </div>
-//                     </div>
-//                 )}
-
-//                 {/* Mobile View (Step-based Layout) */}
-//                 {isMobile && (
-//                     <>
-//                         {step === 1 && (
-//                             <div className="blogForm-form-group">
-//                                 <div className="blogForm-input-group">
-//                                     <div className="blogForm-groupTitle">
-//                                         <label className="blogForm-gt-label">Title:</label>
-//                                         <input
-//                                             className="blogForm-inputTitle"
-//                                             type="text"
-//                                             name="title"
-//                                             placeholder="Enter title"
-//                                             value={formData.title}
-//                                             onChange={handleChange}
-//                                             required
-//                                         />
-//                                     </div>
-//                                     <div className="blogForm-groupCategory">
-//                                         <label className="blogForm-gc-label">Category:</label>
-//                                         <select
-//                                             name="category"
-//                                             value={formData.category}
-//                                             onChange={handleChange}
-//                                             required
-//                                             className="blogForm-select"
-//                                         >
-//                                             <option value="">Select a category</option>
-//                                             <option value="technology">Technology</option>
-//                                             <option value="health">Health</option>
-//                                             <option value="lifestyle">Lifestyle</option>
-//                                             <option value="education">Education</option>
-//                                         </select>
-//                                     </div>
-//                                 </div>
-//                                 <div className="blogForm-groupImage">
-//                                     <label>Upload Image:</label>
-//                                     <input
-//                                         type="file"
-//                                         accept="image/*"
-//                                         onChange={handleImageChange}
-//                                         className="blogForm-fileInput"
-//                                     />
-//                                     {imagePreview && (
-//                                         <img
-//                                             src={imagePreview}
-//                                             alt="Preview"
-//                                             className="blogForm-imagePreview"
-//                                         />
-//                                     )}
-//                                 </div>
-//                                 <button type="button" className="blogForm-button next" onClick={() => setStep(2)}>
-//                                     Next
-//                                 </button>
-//                             </div>
-//                         )}
-
-//                         {step === 2 && (
-//                             <div className="blogForm-groupContent">
-//                                 <label className="blogForm-groupContent-label">Content:</label>
-//                                 <ReactQuill
-//                                     value={formData.content || ""}
-//                                     onChange={handleContentChange}
-//                                     className="blogForm-editor"
-//                                     placeholder="Write something amazing..."
-//                                 />
-//                                 <div className="blogForm-navigation">
-//                                     <button type="button" className="blogForm-button back" onClick={() => setStep(1)}>
-//                                         Back
-//                                     </button>
-//                                     <button type="submit" className="blogForm-button submit">
-//                                         Submit
-//                                     </button>
-//                                 </div>
-//                             </div>
-//                         )}
-//                     </>
-//                 )}
-//             </form>
-//         </div>
-//     );
-// };
-
-// export default BlogForm;

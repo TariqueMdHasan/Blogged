@@ -59,22 +59,22 @@ function MyProfile() {
           <div className='MyProfile-blogs-nav'>
             <div className='MyProfile-slider' style={{ left: getSliderPosition() }}></div>
             <div
-              // className={`MyProfile-blogs-nav-MyBlogs ${active === "MyPBlogs" ? "active" : ""}`}
-              className='MyProfile-blogs-nav-MyBlogs'
+              className={`MyProfile-blogs-nav-MyBlogs ${active === "MyPBlogs" ? "active" : ""}`}
+              // className='MyProfile-blogs-nav-MyBlogs'
               onClick={() => setActive("MyPBlogs")}
             >
               <p>Blogs</p>
             </div>
             <div
-              // className={`MyProfile-blogs-nav-MyComments ${active === "MyPComments" ? "active" : ""}`}
-              className='MyProfile-blogs-nav-MyComments'
+              className={`MyProfile-blogs-nav-MyComments ${active === "MyPComments" ? "active" : ""}`}
+              // className='MyProfile-blogs-nav-MyComments'
               onClick={() => setActive("MyPComments")}
             >
               <p>Comments</p>
             </div>
             <div
-              // className={`MyProfile-blogs-nav-MyAnalitycs ${active === "MyPAnalytics" ? "active" : ""}`}
-              className='MyProfile-blogs-nav-MyAnalitycs'
+              className={`MyProfile-blogs-nav-MyAnalitycs ${active === "MyPAnalytics" ? "active" : ""}`}
+              // className='MyProfile-blogs-nav-MyAnalitycs'
               onClick={() => setActive("MyPAnalytics")}
             >
               <p>Analytics</p>

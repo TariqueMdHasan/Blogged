@@ -38,9 +38,23 @@
     padding: 15px 25px;
     border-radius: 3px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease-in-out;
     margin: 1rem 0 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: var(--background-color);
+}
+.WriteBlogButton svg{
+    width: 1rem;
 }
 .WriteBlogButton:hover{
     background: #4cd302;
+    /* color: white; */
+
+    color: var(--text-color);
+    transform: scale(1.01);
+    box-shadow: 0 4px 10px #525252;
+    backdrop-filter: blur(5px);
 }

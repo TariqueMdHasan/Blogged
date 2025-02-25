@@ -9,9 +9,16 @@
 .ProfileImage{
     height: 50px;
     width: 50px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     background-color: black;
+    border-radius: 5px;
+    border: 2px solid yellowgreen;
     cursor: pointer;
+}
+.profile-visual-identity{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 .IntroLeft{
     min-height: 40%;

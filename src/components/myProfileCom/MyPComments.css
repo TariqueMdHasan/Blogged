@@ -1,0 +1,116 @@
+.MyPComments{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.FeedBlogs::-webkit-scrollbar {
+    display: none;
+}
+.MyComments-Author-Information{
+    width: 70%;
+    height: auto;
+    /* background-color: brown; */
+    margin: 10px 0;
+    /* border: 2px solid red; */
+    border-radius: 5px;
+    background-color: var(--feed-blog-bg);
+    box-shadow: 0 4px 30px #525252;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.MyComments-Author-Identity{
+    width: 100%;
+    height: 4rem;
+    /* background-color: rgb(22, 5, 250); */
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 10px; */
+}
+.MyComments-Autohor-PPic{
+    height: 60%;
+    aspect-ratio: 1/1;
+    border: 2px solid aquamarine;
+    border-radius: 5px;
+    /* margin: 10px 0 0 10px; */
+    margin-left: 1rem;
+}
+.MyComments-for-delete-edit{
+    height: 98%;
+    width: auto;
+    /* background-color: rgb(15, 38, 57); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.MyComments-del-edit{
+    height: 70%;
+    width: auto;
+    /* background-color: rgb(15, 38, 57); */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 1rem;
+    /* margin-top: 1rem; */
+}
+/* .MyComments-del-edit 
+.FeedBlog-delete-edit-edit,
+.MyComments-del-edit
+.FeedBlog-delete-edit-delete
+{
+    margin-top: 10px;
+    margin-right: 1rem;
+} */
+.MyComments-author-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.MyComments-Author-Name-UserName div p{
+    margin: 0 0 0 1rem;
+}
+.MyComments{
+    height: auto;
+    width: 100%;
+
+}
+.MyComments p{
+    margin: 10px;
+}
+
+.MyComments-date{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+}
+.MyComments-date button{
+    margin-right: 1rem;
+    padding: 3px 10px;
+    background-color: #FFB300;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--background-color);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.MyComments-date button:hover{
+    color: var(--text-color);
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px #525252;
+    backdrop-filter: blur(5px);
+}
