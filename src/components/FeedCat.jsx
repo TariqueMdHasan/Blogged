@@ -2,7 +2,7 @@ import React from 'react'
 
 function FeedCat() {
   return (
-    <div>FeedCat</div>
+    <div></div>
   )
 }
 

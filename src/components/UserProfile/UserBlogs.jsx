@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./MyPBlogs.css";
+// import "./MyPBlogs.css";
+import '../myProfileCom/MyPBlogs.css'
 import { AiFillDelete } from "react-icons/ai";
 // import { FaEdit } from "react-icons/fa";
 import Loader from "../Loader";
@@ -9,11 +10,11 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-function MyPBlogs() {
+function UserBlogs({userId}) {
   const navigate = useNavigate();
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [userId, setUserId] = useState(null);
+  const [userPd, setUserPd] = useState(null);
 
   // http://localhost:5000/api/blog/myBlogs
 
@@ -40,22 +41,14 @@ function MyPBlogs() {
     const fetchBlogs = async () => {
       setLoading(true);
       const token = localStorage.getItem("token");
-      if (!token) {
-        console.log("Please Login");
-        return;
-      }
+      
       try {
-        const decoded = jwtDecode(token);
-        setUserId(decoded.userId || decoded.id);
+         const decoded = jwtDecode(token);
+        setUserPd(decoded.userPd || decoded.id);
         // console.log(userId)
 
         const response = await axios.get(
-          "https://blogbackend-wi2j.onrender.com/api/blog/myBlogs",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
+          `https://blogbackend-wi2j.onrender.com/api/blog/userBlog/${userId}`
         );
 
         // console.log("Fetched Data:", response.data);
@@ -63,6 +56,8 @@ function MyPBlogs() {
           throw new Error("Failed to fetch blogs");
         }
         setBlogs(response.data.blogs);
+        console.log(response.data.blogs)
+        // console.log(userPd)
       } catch (error) {
         console.error("Error fetching blogs", error);
       } finally {
@@ -102,7 +97,7 @@ function MyPBlogs() {
                 </div>
               </div>
 
-              {userId === blog.author._id ? (
+              {userPd === blog.author._id ? (
                 <div className="FeedBlog-delete-edit">
                   {/* <button className="FeedBlog-delete-edit-edit">
                     <FaEdit />
@@ -117,7 +112,7 @@ function MyPBlogs() {
                   </button>
                 </div>
               ) : (
-                <div>.</div>
+                <div></div>
               )}
             </div>
             <div className="FeedBlog-Blog-Information">
@@ -192,4 +187,4 @@ function MyPBlogs() {
   );
 }
 
-export default MyPBlogs;
+export default UserBlogs;

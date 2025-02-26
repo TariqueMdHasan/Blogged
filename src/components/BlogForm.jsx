@@ -20,7 +20,6 @@ const BlogForm = () => {
     const [imagePreview, setImagePreview] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    // Handle text input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -35,7 +34,7 @@ const BlogForm = () => {
         if (file) {
             setFormData({ ...formData, blogImages: file });
 
-            // Revoke old image preview URL
+
             if (imagePreview) {
                 URL.revokeObjectURL(imagePreview);
             }
@@ -49,7 +48,7 @@ const BlogForm = () => {
         e.preventDefault();
         setLoading(true);
     
-        // Trim and validate fields
+        
         const plainTextContent = formData.content.replace(/<(.|\n)*?>/g, "").trim();
         
         if (!formData.title.trim()) {
@@ -83,7 +82,6 @@ const BlogForm = () => {
             return;
         }
     
-        // Create FormData
         const data = new FormData();
         data.append("title", formData.title);
         data.append("content", formData.content);

@@ -71,6 +71,10 @@
 }
 .feedPage-author-info-name-userName p{
     margin: 0;
+    cursor: pointer;
+}
+.feedPage-author-info-name-userName p:hover{
+    text-decoration: underline;
 }
 .BlogPage-bottom-blank{
     height: 10vh;

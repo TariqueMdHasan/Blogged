@@ -1,41 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import './MyPComments.css';
+// import './MyPComments.css';
+import '../myProfileCom/MyPComments.css'
 import axios from 'axios';
 import Loader from '../Loader';
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import { AiFillDelete } from "react-icons/ai";
+// import { AiFillDelete } from "react-icons/ai";
 // import { FaEdit } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+// import { jwtDecode } from "jwt-decode";
 
-function MyPComments() {
+function UserComments({userId}) {
   const navigate = useNavigate();
   const [comment, setComment] = useState([]);
   const [loading, setLoading] = useState(false);
+  // const [userPd, setUserPd] = useState(null);
 
   useEffect(() => {
     setLoading(true);
     const fetchComments = async () => {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        console.log("Please Login");
-        setLoading(false);
-        return;
-      }
+      
       try {
         const response = await axios.get(
-          "https://blogbackend-wi2j.onrender.com/api/comment/myComment",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
+          `https://blogbackend-wi2j.onrender.com/api/comment/user/${userId}`
         );
 
         if (!response.data) {
           throw new Error("Failed to fetch the comments");
         }
         setComment(response.data.comments);
-        // console.log(response.data.comments)
       } catch (error) {
         console.error("Error fetching comments", error);
       } finally {
@@ -43,7 +35,7 @@ function MyPComments() {
       }
     };
     fetchComments();
-  }, []);
+  }, [userId]);
 
   return (
     <div className="MyPComments">
@@ -70,9 +62,9 @@ function MyPComments() {
                   </div>
                 </div>
               </div>
-              <div className=' MyComments-del-edit'>
-                {/* <button className='FeedBlog-delete-edit-edit'><FaEdit /></button > */}
-                <button className='FeedBlog-delete-edit-delete'><AiFillDelete /></button >
+              <div className='FeedBlog-delete-edit MyComments-del-edit'>
+                {/* <button className='FeedBlog-delete-edit-edit'><FaEdit /></button >
+                <button className='FeedBlog-delete-edit-delete'><AiFillDelete /></button > */}
               </div>
             </div>
 
@@ -96,4 +88,4 @@ function MyPComments() {
   );
 }
 
-export default MyPComments;
+export default UserComments;

@@ -13,8 +13,8 @@ function EditPForm() {
     userName: "",
     email: "",
     password: "",
-    profilePicture: "",
-    // bio: ""
+    profilePictures: "",
+    bio: ""
   });
   const [loading, setLoading] = useState(null);
   const [showPassword, setShowPassword] = useState(false)
@@ -34,7 +34,7 @@ function EditPForm() {
       setImagePreview(URL.createObjectURL(file));
     }
     console.log("Selected Image:", file);
-    setFormData({ ...formData, profilePicture: file });
+    setFormData({ ...formData, profilePictures: file });
   };
 
   const handleChange = (e) => {
@@ -45,13 +45,25 @@ function EditPForm() {
     e.preventDefault();
     setLoading(true);
 
-    const updatedData = {
-      name: formData.name,
-      userName: formData.userName,
-      email: formData.email,
-      password: formData.password,
-      profilePicture: formData.profilePicture,
-    };
+    // const updatedData = {
+    //   name: formData.name,
+    //   userName: formData.userName,
+    //   email: formData.email,
+    //   password: formData.password,
+    //   profilePictures: formData.profilePictures,
+    //   bio: formData.bio
+    // };
+
+    const updatedData = new FormData();
+    updatedData.append("name", formData.name);
+    updatedData.append("userName", formData.userName);
+    updatedData.append("email", formData.email);
+    updatedData.append("password", formData.password);
+    updatedData.append("bio", formData.bio);
+    
+    if (formData.profilePictures) {
+      updatedData.append("profilePictures", formData.profilePictures);
+    }
 
     try {
       const token = localStorage.getItem("token");
@@ -76,10 +88,11 @@ function EditPForm() {
         userName: "",
         email: "",
         password: "",
-        profilePicture: ""
+        profilePictures: "",
+        bio: ""
       });
 
-      console.log(formData)
+      // console.log(response.data)
 
       navigate('/myProfile')
       
@@ -170,8 +183,8 @@ function EditPForm() {
                 id="personalEdit-bio"
                 placeholder="Your bio"
                 name="bio"
-                // value={formData.bio}
-                // onChange={handleChange}
+                value={formData.bio}
+                onChange={handleChange}
               />
               <label htmlFor="personalEdit-password">Update Passwod</label>
               <input

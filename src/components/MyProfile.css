@@ -44,6 +44,13 @@
     border: 2px solid rgb(133, 242, 100);
     border-radius: 5px;
     margin-top: 1rem;
+    max-height: 30vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.MyProfile-information-About-Me::-webkit-scrollbar {
+    display: none;
 }
 .MyProfile-information-About-Me p{
     margin: 10px;

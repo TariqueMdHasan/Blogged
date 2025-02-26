@@ -33,7 +33,7 @@ function MyProfile() {
           }
         )
         setUser(response.data.user)
-        console.log(response.data.user)
+        // console.log(response.data.user)
 
       }catch(error){
         console.error("error while fetching data")
@@ -98,7 +98,7 @@ function MyProfile() {
           <p>{user.email}</p>
           <div className='MyProfile-information-About-Me'>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ipsa nam harum quas libero amet delectus debitis porro sequi dolores odit, et suscipit voluptates explicabo? Aliquam animi eligendi modi vel!
+              {user.bio}
             </p>
           </div>
           <button 
@@ -115,21 +115,18 @@ function MyProfile() {
             <div className='MyProfile-slider' style={{ left: getSliderPosition() }}></div>
             <div
               className={`MyProfile-blogs-nav-MyBlogs ${active === "MyPBlogs" ? "active" : ""}`}
-              // className='MyProfile-blogs-nav-MyBlogs'
               onClick={() => setActive("MyPBlogs")}
             >
               <p>Blogs</p>
             </div>
             <div
               className={`MyProfile-blogs-nav-MyComments ${active === "MyPComments" ? "active" : ""}`}
-              // className='MyProfile-blogs-nav-MyComments'
               onClick={() => setActive("MyPComments")}
             >
               <p>Comments</p>
             </div>
             <div
               className={`MyProfile-blogs-nav-MyAnalitycs ${active === "MyPAnalytics" ? "active" : ""}`}
-              // className='MyProfile-blogs-nav-MyAnalitycs'
               onClick={() => setActive("MyPAnalytics")}
             >
               <p>Analytics</p>
