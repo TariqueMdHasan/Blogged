@@ -5,8 +5,10 @@ import MyPBlogs from './myProfileCom/MyPBlogs'
 import MyPAnalytics from './myProfileCom/MyPAnalytics';
 import MyPComments from './myProfileCom/MyPComments';
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 function MyProfile() {
+  const navigate = useNavigate()
   const [active, setActive] = useState("MyPBlogs")
   const [user, setUser] = useState(null);
    const [error, setError] = useState("")
@@ -99,7 +101,12 @@ function MyProfile() {
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ipsa nam harum quas libero amet delectus debitis porro sequi dolores odit, et suscipit voluptates explicabo? Aliquam animi eligendi modi vel!
             </p>
           </div>
-          <button className='MyProfile-information-Edit-button'><FaUserEdit />Edit Profile</button>
+          <button 
+            onClick={()=>{
+              navigate('/Edit-Profile')
+            }}
+          
+          className='MyProfile-information-Edit-button'><FaUserEdit />Edit Profile</button>
         </div>
       </div>
       <div className='MyProfile-blogs-nav-container'>

@@ -1,0 +1,151 @@
+.personalEdit{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* background-color: rgb(83, 6, 6); */
+}
+
+.personalEdit::-webkit-scrollbar {
+    display: none;
+}
+.personalEdit-container{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.personalEdit-form{
+    display: flex;
+    width: 60%;
+    height: 75vh;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: flex-start;
+    border: 2px solid red;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: var(--nav-bg);
+    box-shadow: 0 4px 30px #525252;
+    backdrop-filter: blur(5px);
+    gap: 1rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+}
+
+.personalEdit-form-right{
+    width: 50%;
+    height: 100%;
+
+}
+.personalEdit-form-left{
+    width: 50%;
+    height: 50%;
+    /* background-color: red; */
+}
+
+
+
+
+.personalEdit-form-left label{
+font-size: 13px;
+/* margin-top: 1rem; */
+}
+.personalEdit-form-left input{
+    border: 2px solid var(--text-color);
+    width: 100%;
+    background-color: transparent;
+    border-radius: 5px;
+    outline: none;
+    color: var(--text-color);
+    height: 20px;
+    margin-bottom: 1rem;
+}
+.personalEdit-form-left textarea{
+    /* border: 2ps solid var(--text-color); */
+    width: 100%;
+    background-color: transparent;
+    border-radius: 5px;
+    outline: none;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+.personalEdit-form-left button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin-top: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.personalEdit-form-left button:hover{
+    background-color: darkblue;
+}
+
+
+.personalEdit-photo {
+    margin-top: 10px;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-left: 50%;
+    transform: translate(-50%, 1px);
+}
+.personalEdit-cancel{
+    position: fixed;
+    right: -1rem;
+    top: -1rem;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.personalEdit-cancel:hover{
+    background-color: darkred;
+}
+
+
+
+@media (max-width: 992px) {
+    .personalEdit-form{
+        height: auto;
+        width: 90%;
+        flex-direction: column;
+    }
+    .personalEdit-form-left input{
+        margin-bottom: 7px;
+    }
+    .personalEdit-form-left textarea{
+        margin-bottom: 7px;
+    }
+    .personalEdit-form-right{
+        width: 100%;
+        height: auto;
+    
+    }
+    .personalEdit-form-left{
+        width: 100%;
+        height: auto;
+        /* background-color: red; */
+    }
+    .personalEdit-photo {
+        max-width: 70px;
+        max-height: 70px;
+    }
+}

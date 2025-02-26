@@ -8,6 +8,7 @@ import Feed from './pages/Feed';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MyProfile from './components/MyProfile';
 import BlogPage from '../src/components/BlogPage/BlogPage'
+import PersonalEdit from './components/myProfileCom/EditPForm'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/blogForm" element={<BlogForm/>} />
         <Route path="/myProfile" element={<MyProfile/>} />
         <Route path="/blogPage/:id" element={<BlogPage/>} />
+        <Route path="/Edit-Profile" element={<PersonalEdit/>} />
       </Routes>
     </Router>
   );
