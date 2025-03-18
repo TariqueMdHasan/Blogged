@@ -77,7 +77,7 @@ function MyPComments() {
             </div>
 
             <div className='MyComments'>
-              <p>{item.text}</p>
+              <p className='MyComments-comment'>{item.text}</p>
               <div className='MyComments-date'>
                 <p>{new Date(item.createdAt).toDateString()}</p>
                 <button

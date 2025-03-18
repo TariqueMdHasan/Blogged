@@ -46,13 +46,15 @@
     height: 80%;
     aspect-ratio: 1/1;
     border-radius: 5px;
-    border: 2px solid var(--text-color);
+    /* border: 2px solid var(--text-color); */
+    border: 0.5px solid #696868;
 }
 .FeedBlog-author-img{
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
     cursor: pointer;
+    border-radius: inherit;
 }
 .FeedBlog-Author-Name-UserName{
     height: 100%;
@@ -64,12 +66,26 @@
     height: 40%;
     background-color: red;
 } */
-.FeedBlog-Author-Name-UserName div p{
+.FeedBlog-Author-UserName p{
     margin: 0;
     cursor: pointer;
-    
+    font-family: "Inter", sans-serif;
+    color: var(--date-text);
+    font-size: 10px;
+    font-weight: 400;
 }
-.FeedBlog-Author-Name-UserName div p:hover{
+.FeedBlog-Author-UserName p:hover{
+    text-decoration: underline;
+}
+.FeedBlog-Author-Name p{
+    margin: 0;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    /* color: var(--date-text); */
+}
+.FeedBlog-Author-Name p:hover{
     text-decoration: underline;
 }
 .FeedBlog-delete-edit{
@@ -129,13 +145,15 @@
 .FeedBlog-Blog-Image{
     height: 90%;
     aspect-ratio: 1/1;
-    border: 2px solid rgb(79, 244, 79);
+    /* border: 2px solid rgb(79, 244, 79); */
+    border: 0.5px solid #696868;
     border-radius: 5px;
 }
 .FeedBlog-blog-img{
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
+    border-radius: inherit;
 }
 .Feedblog-content-texts{
     height: 90%;
@@ -162,6 +180,9 @@
 }
 .FeedBlog-date{
     margin-left: 1rem;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    color: var(--date-text);
 }
 
 .FeedBlog-Total-Comments{
@@ -191,6 +212,8 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease-in-out;
+    font-family: "Inter", sans-serif;
+    gap: 10px;
 }
 .FeedBlog-Total-Comments-gtb:hover{
     color: white;
@@ -210,13 +233,24 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease-in-out;
+    font-family: "Inter", sans-serif;
 }
 .FeedBlog-content-para{
     margin: 0;
     margin-left: 1rem;
     text-align: justify;
+    /* font-family: "Inter", sans-serif; */
+    font-family: "Raleway", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--text-para);
+    font-weight: 400;
 }
 .FeedBlog-content-title{
     margin: 0;
     margin-left: 1rem;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.5px
 }

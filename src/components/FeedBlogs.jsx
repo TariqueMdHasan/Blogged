@@ -94,7 +94,7 @@ function FeedBlogs() {
                       onClick={() => {
                         navigate(`/User-Profile/${blog.author._id}`);
                       }}
-                    >@{blog.author?.userName || "Unknown"}</p>
+                    >-@{blog.author?.userName || "Unknown"}</p>
                   </div>
                 </div>
               </div>
@@ -128,8 +128,8 @@ function FeedBlogs() {
               <div className="Feedblog-content-texts">
                 <div className="FeedBlog-title">
                   <p className="FeedBlog-content-title">
-                    {blog.title.length > 60
-                      ? blog.title.substring(0, 60) + "..."
+                    {blog.title.length > 45
+                      ? blog.title.substring(0, 45) + "..."
                       : blog.title}
                   </p>
                 </div>
@@ -138,8 +138,8 @@ function FeedBlogs() {
                     <div
                       dangerouslySetInnerHTML={{
                         __html:
-                          blog?.content.length > 180
-                            ? blog?.content.substring(0, 180) + "..."
+                          blog?.content.length > 400
+                            ? blog?.content.substring(0, 400) + "..."
                             : blog?.content,
                       }}
                     />

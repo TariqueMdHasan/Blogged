@@ -94,10 +94,10 @@ function MyPBlogs() {
                 </div>
                 <div className="FeedBlog-Author-Name-UserName">
                   <div className="FeedBlog-Author-Name">
-                    {blog.author?.name || "Unknown"}
+                    <p>{blog.author?.name || "Unknown"}</p>
                   </div>
                   <div className="FeedBlog-Author-UserName">
-                    @{blog.author?.userName || "Unknown"}
+                   <p> @{blog.author?.userName || "Unknown"}</p>
                   </div>
                 </div>
               </div>

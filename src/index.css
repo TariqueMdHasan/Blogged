@@ -11,6 +11,8 @@ body.light {
     --primary-color: blue;
     --button-bg: rgb(57, 10, 247);
     --button-text: black;
+    --text-para: rgb(61, 61, 61);
+    --date-text: rgb(128, 127, 127);
 
     /* navbar */
     --nav-bg: rgb(215, 215, 215);
@@ -36,6 +38,8 @@ body.dark {
     --primary-color: cyan;
     --button-bg: rgb(45, 11, 238);
     --button-text: white;
+    --text-para: rgb(231, 231, 231);
+    --date-text: rgb(183, 183, 183);
 
     /* navbar */
     --nav-bg: rgb(0, 0, 0);

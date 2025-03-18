@@ -19,6 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: "Inter", sans-serif;
 }
 .MyProfile-information-photo-container{
     height: 17vh;
@@ -37,6 +38,14 @@
 }
 .MyProfile-information-container h2{
     margin-top: 1rem;
+}
+
+.MyProfile-information-container p{
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    color: var(--date-text);
+    font-size: 12px;
+    font-weight: 400;
 }
 .MyProfile-information-About-Me{
     width: 100%;
@@ -127,6 +136,7 @@
     border-radius: inherit;
     transition: all 0.3s ease-in-out;
     z-index: 1;
+    font-family: "Inter", sans-serif;
 }
 .MyProfile-blogs-nav-MyBlogs.active{
     /* background-color: blue; */
@@ -150,3 +160,11 @@
     justify-content: center;
     align-items: center;
 }
+/* .MyProfile-Name-info{
+    margin: 0;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    color: var(--date-text);
+    font-size: 10px;
+    font-weight: 400;
+} */

@@ -10,11 +10,14 @@
     /* border-bottom: 1px solid var(--text-color); */
 }
 
-.nav-logo{
+/* .nav-logo{
     margin: 0 0 0 1rem;
-    /* margin: 0; */
+    margin: 0;
     cursor: pointer;
-}
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+} */
 
 .nav-menu{
     height: 2rem;
@@ -74,4 +77,19 @@
 }
 .nav-filter-Icon svg{
     font-size: 1rem;
+}
+.ProfileImage-nav{
+    background-color: var(--nav-btn-bg);
+    color: var(--text-color);
+    border: none;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    background: black;
+    border: 0.5px solid #696868;
 }

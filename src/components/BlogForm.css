@@ -8,6 +8,7 @@
     transform: translate(-50%, -50%);
     border-radius: 10px;
     background-color: var(--nav-bg);
+    font-family: "Inter", sans-serif;
 }
 
 .blogForm-header{

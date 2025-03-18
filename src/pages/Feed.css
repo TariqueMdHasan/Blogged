@@ -45,6 +45,7 @@
     align-items: center;
     gap: 5px;
     color: var(--background-color);
+    font-family: "Inter", sans-serif;
 }
 .WriteBlogButton svg{
     width: 1rem;

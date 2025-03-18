@@ -41,7 +41,8 @@
     max-height: 15rem;
     aspect-ratio: 1/1;
     /* max-width: 40vw; */
-    border: 2px solid gold;
+    /* border: 2px solid gold; */
+    border: 0.5px solid #696868;
     border-radius: 5px;
     margin-top: 1rem;
 }
@@ -58,6 +59,7 @@
     height: 100%;
     object-fit: cover;
     width: 100%;
+    border-radius: inherit;
 }
 .feedPage-author-info-name-userName{
     width: auto;
@@ -69,13 +71,37 @@
     justify-content: center;
     align-items: self-start;
 }
-.feedPage-author-info-name-userName p{
+/* .feedPage-author-info-name-userName p{
     margin: 0;
     cursor: pointer;
 }
 .feedPage-author-info-name-userName p:hover{
     text-decoration: underline;
+} */
+.feedPage-author-info-userName{
+    margin: 0;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    color: var(--date-text);
+    font-size: 10px;
+    font-weight: 400;
 }
+.feedPage-author-info-userName:hover{
+    text-decoration: underline;
+}
+.feedPage-author-info-name{
+    margin: 0;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    /* color: var(--date-text); */
+}
+.feedPage-author-info-name:hover{
+    text-decoration: underline;
+}
+
+
 .BlogPage-bottom-blank{
     height: 10vh;
     width: 100%;
@@ -92,6 +118,30 @@
     justify-content: center;
     align-items: center;
 } */
+.BlogPage-blog-title{
+    /* margin: 0; */
+    margin-left: 1rem;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.5px
+}
+.BlogPage-blog-content{
+    margin: 0;
+    margin-left: 1rem;
+    text-align: justify;
+    font-family: "Raleway", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--text-para);
+    font-weight: 400;
+}
+.feedBlog-date{
+    margin-left: 1rem;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    color: var(--date-text);
+}
 
 
 
@@ -156,6 +206,23 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+.BlogPage-Comments-text{
+    margin: 0;
+    margin-left: 1rem;
+    text-align: justify;
+    /* font-family: "Inter", sans-serif; */
+    font-family: "Raleway", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--text-para);
+    font-weight: 400;
+}
+.BlogPage-comments-date-text{
+    margin-left: 1rem;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    color: var(--date-text);
+}
 .BlogPage-Comments::-webkit-scrollbar {
     display: none;
 }
@@ -184,7 +251,8 @@
 .BlogPage-Comments-Autohor-PPic{
     height: 60%;
     aspect-ratio: 1/1;
-    border: 2px solid aquamarine;
+    /* border: 2px solid aquamarine; */
+    border: 0.5px solid #696868;
     border-radius: 5px;
     /* margin: 10px 0 0 10px; */
     margin-left: 1rem;
@@ -257,6 +325,28 @@
 .BlogPage-Comments-Author-Name-UserName div p{
     margin: 0 0 0 1rem;
 }
+.BlogPage-Comments-Author-UserName p{
+    margin: 0;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    color: var(--date-text);
+    font-size: 10px;
+    font-weight: 400;
+}
+.BlogPage-Comments-Author-UserName p:hover{
+    text-decoration: underline;
+}
+.BlogPage-Comments-Author-Name p{
+    margin: 0;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    /* color: var(--date-text); */
+}
+.BlogPage-Comments-Author-Name p:hover{
+    text-decoration: underline;
+}
 .BlogPage-Comments-date-btn{
     height: auto;
     width: 100%;
@@ -264,9 +354,20 @@
     marg */
 
 }
-.MyCommBlogPage-Commentsents p{
+/* .MyCommBlogPage-Commentsents p{
     margin: 10px;
-}
+} */
+/* .BlogPage-Comments{
+    margin: 0;
+    margin-left: 1rem;
+    text-align: justify;
+    font-family: "Raleway", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--text-para);
+    font-weight: 400;
+} */
+
 .BlogPage-Comments-date-btn p{
     margin-left: 1rem;
 }

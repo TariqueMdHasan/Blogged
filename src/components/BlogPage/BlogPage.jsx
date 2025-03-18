@@ -110,7 +110,7 @@ function BlogPage() {
         );
         if (!commentResponse.data) throw new Error("Failed to fetch comments");
         setComment(commentResponse.data.comments);
-        console.log(commentResponse.data.comments)
+        // console.log(commentResponse.data.comments)
       } catch (error) {
         console.error("Error fetching comments", error);
       }
@@ -150,6 +150,7 @@ function BlogPage() {
                 </div>
                 <div className="feedPage-author-info-name-userName">
                   <p
+                    className="feedPage-author-info-name"
                     onClick={() => {
                       navigate(`/User-Profile/${blog.author._id}`);
                     }}
@@ -157,6 +158,7 @@ function BlogPage() {
                     {blog?.author?.name}
                   </p>
                   <p
+                    className="feedPage-author-info-userName"
                     onClick={() => {
                       navigate(`/User-Profile/${blog.author._id}`);
                     }}
@@ -167,10 +169,11 @@ function BlogPage() {
                 </div>
               </div>
             </div>
-            <h3>{blog?.title}</h3>
+            <p className="feedBlog-date">{new Date(blog?.createdAt).toDateString()}</p>
+            <h3 className="BlogPage-blog-title">{blog?.title}</h3>
             {/* <p> */}
             {/* {blog?.content} */}
-            <div dangerouslySetInnerHTML={{ __html: blog?.content }} />
+            <div className="BlogPage-blog-content" dangerouslySetInnerHTML={{ __html: blog?.content }} />
             {/* </p> */}
             <div className="BlogPage-bottom-blank"></div>
           </div>
@@ -259,9 +262,9 @@ function BlogPage() {
                     </div>
 
                     <div className="BlogPage-Comments-date-btn">
-                      <p>{item.text}</p>
+                      <p className="BlogPage-Comments-text">{item.text}</p>
                       <div className="BlogPage-Comments-date">
-                        <p>{new Date(item.createdAt).toDateString()}</p>
+                        <p className="BlogPage-comments-date-text">{new Date(item.createdAt).toDateString()}</p>
                         <button
                           onClick={() => {
                             navigate("/feed");
