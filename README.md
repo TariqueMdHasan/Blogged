@@ -2,6 +2,8 @@
 
 A **MERN stack** blogging platform where users can create, read, update, and delete blogs. Users can upload images, comment on posts, and manage their profiles.
 
+Hosted website: https://bloggedd.vercel.app/
+
 Backend repository link: https://github.com/TariqueMdHasan/blogBackEnd
 
 ## 🚀 Features
