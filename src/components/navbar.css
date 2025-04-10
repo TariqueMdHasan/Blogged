@@ -1,5 +1,6 @@
 .navbar{
-    background-color: var(--nav-bg);
+    /* background-color: var(--nav-bg); */
+    background-color: var(--nav-new-bg);
     color: var(--nav-text);
     height: 10vh;
     width: 100vw;
@@ -52,8 +53,10 @@
     padding: 10px 20px;
     border-radius: 2px;
     cursor: pointer;
-    background-color: blue;
-    color: white;
+    /* background-color: blue;
+    color: white; */
+    background-color: var(--nav-btn-bg);
+    color: var(--text-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,6 +93,14 @@
     align-items: center;
     justify-content: center;
     margin-left: 1rem;
-    background: black;
+    /* background: black; */
     border: 0.5px solid #696868;
+}
+.error-message{
+    display: none;
+}
+.nav-penImage{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }

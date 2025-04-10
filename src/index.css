@@ -14,10 +14,12 @@ body.light {
     --text-para: rgb(61, 61, 61);
     --date-text: rgb(128, 127, 127);
 
+
     /* navbar */
     --nav-bg: rgb(215, 215, 215);
     --nav-text: black;
     --nav-btn-bg: white;
+    --nav-new-bg: rgb(0, 0, 179);
 
     /* login */
     --login-bg: rgb(180, 180, 180);
@@ -29,6 +31,12 @@ body.light {
 
     /* loader */
     --loader-bg: rgba(255, 255, 255, 0.8);
+
+    /* landing */
+    --landding-hero-bg: linear-gradient(135deg, #ffffff 0%, #e0f0ff 40%, #007BFF 100%);
+    --landing-hero-h1: linear-gradient(90deg, #003366, #0055ff);
+    --landing-hero-h2:  #333333;
+    --landing-hero-h2-shadow: rgba(255, 255, 255, 0.6);
 }
 
 /* dark theme */
@@ -45,6 +53,7 @@ body.dark {
     --nav-bg: rgb(0, 0, 0);
     --nav-text: white;
     --nav-btn-bg: rgb(68, 68, 68);
+    --nav-new-bg: black;
 
     /* login */
     --login-bg: rgb(17 16 16);
@@ -56,4 +65,10 @@ body.dark {
 
     /* loader */
     --loader-bg: rgba(0, 0, 0, 0.847);
+
+    /* landing */
+    --landding-hero-bg: linear-gradient(135deg, #0d1117 0%, #1f2a48 40%, #007BFF 100%);
+    --landing-hero-h1: linear-gradient(90deg, #66aaff, #ffffff);
+    --landing-hero-h2:  #cbd8f0;
+    --landing-hero-h2-shadow: rgba(0, 0, 0, 0.5);
 }
